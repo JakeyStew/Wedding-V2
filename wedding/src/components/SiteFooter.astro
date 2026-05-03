@@ -1,0 +1,163 @@
+---
+import { Image } from "astro:assets";
+import Logo from '../assets/images/logo/logo_cream.webp';
+import Background from '../assets/images/bgs/bg_turf.webp';
+---
+
+<footer>
+  <div class="upper">
+    <div class="container">
+      <div>
+        <h3>Venue & Hotels</h3>
+        <ul>
+          <li>
+            <a href="https://newport-market.co.uk/" target="_blank" title="Newport Market website (Opens in new tab)">Newport Market Venue</a>
+          </li>
+          <li>
+            <a href="https://www.mercurenewport.co.uk/" target="_blank" title="MMercure hotel & bar website (Opens in new tab)">Mercure Hotel</a>
+          </li>
+          <li>
+            <a href="https://www.travelodge.co.uk/hotels/399/Newport-Central-hotel?WT.tsrc=GHA_Organic&utm_campaign=GHA_Newport%20Central&utm_medium=GHA_Organic&utm_source=google" target="_blank" title="Newport Travelodge (Opens in new tab)">Travelodge Newport City Centre</a>
+          </li>
+          <li>
+            <a href="https://www.oyorooms.com/gb/247631/" target="_blank" title="Belvilla Newport Centre hotel website (Opens in new tab)">Belvilla City Centre Hotel</a>
+          </li>
+          <li>
+            <a href="https://all.accor.com/hotel/6814/index.en.shtml" target="_blank" title="Ibis Budget Website (Opens in new tab)">Ibis Hotel</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3>Transport Services</h3>
+        <ul>
+          <li>
+            <a href="https://friarswalknewport.co.uk/parking/" target="_blank" title="Friars Walk website (Opens in new tab)">Friars Walk</a>
+          </li>
+          <li>
+            <a href="https://www.kingswaycentre.com/visitors-information" target="_blank" title="Kingsway Centre parking website (Opens in new tab)">Kingsway car park</a>
+          </li>
+          <li>
+            <a href="https://www.ncp.co.uk/find-a-car-park/car-parks/newport-high-street/" target="_blank" title="NCP Newport website (Opens in new tab)">NCP Newport</a>
+          </li>
+          <li>
+            <a href="https://tfw.wales/places/stations/newport" target="_blank" title="Newport train station website (Opens in new tab)">Newport train station</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3>Parking Facilities</h3>
+        <ul>
+          <li>
+            <a href="https://friarswalknewport.co.uk/parking/" target="_blank" title="Friars Walk website (Opens in new tab)">Friars Walk</a>
+          </li>
+          <li>
+            <a href="https://www.kingswaycentre.com/visitors-information" target="_blank" title="Kingsway Centre parking website (Opens in new tab)">Kingsway car park</a>
+          </li>
+          <li>
+            <a href="https://www.ncp.co.uk/find-a-car-park/car-parks/newport-high-street/" target="_blank" title="NCP Newport website (Opens in new tab)">NCP Newport</a>
+          </li>
+        </ul>
+      </div>
+      <div class="image">
+        <Image src={Logo} alt='logo for the wedding'/>
+      </div>
+    </div>
+  </div>
+  <div class="lower">
+    <div>
+      <span>Made by yours truly. </span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    .upper {
+      background-color: #354a2f;
+      color: #ffffff;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1em;
+
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+      img {
+        display: block;
+        max-width:230px;
+        width: auto;
+        height: auto;
+      }
+
+      h3 {
+        font-style: italic;
+        text-decoration: underline;
+      }
+
+      ul {
+        padding-right: 0.5em;
+        li {
+          list-style: none;
+
+          a {
+            font-size: 0.8em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 44px;
+            text-decoration: none;
+
+            &:hover, &:focus, &:focus-visible {
+              color: #ffffff;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+
+    .lower{
+      background-color: #5c724a;
+
+      > div {
+        display: flex;
+        justify-content: center;
+        color: #ffffff;
+        font-size: 0.6em;
+      }
+    }
+
+    @media (max-width: 1012px) {
+      .container {
+        > div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          ul li {
+            display: flex;
+            justify-content: center;
+          }
+        }
+      }
+      .image {
+        display: none !important;
+      }
+    }
+
+    @media (max-width: 780px) {
+      .container > div {
+        ul {
+          margin-bottom: 1em;
+
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+</style>

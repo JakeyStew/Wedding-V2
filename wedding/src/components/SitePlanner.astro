@@ -1,0 +1,100 @@
+---
+---
+
+<div>
+    <h2>What's the plan?</h2>
+    <p><span>17:00-17:15</span> - Arrive at <a href="https://newport-market.co.uk/" target="_blank" title="Newport market website (Opens in new tab)">Newport Market</a>.</p>
+    <p><span>19:00-19:30</span> - Buffet will be available.</p>
+    <p><span>21:00</span> - Live band will begin, get your dancing shoes on!</p>
+    <p><span>00:00</span> - Unfortunately it is time to end. So get out!</p>
+</div>
+
+<style>
+    div {
+        min-width: 300px;
+        max-width: 500px;
+        margin: auto;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        margin-bottom: 0.5em;
+        font-style: italic;
+    }
+
+    a {
+        color: #000000;
+
+        &:hover {
+            color: #36422c;
+        }
+    }
+
+    p {
+        font-size: 1em;
+        line-height: 1.75em;
+        border-top: 3px solid;
+        border-image: linear-gradient(to right, #354a2f 0%, #5c724a 100%);
+        border-image-slice: 1;
+        border-width: 3px;
+        margin: 0;
+        padding: 40px;
+        counter-increment: section;
+        position: relative;
+        color: #000000;
+
+        span {
+            font-style: italic;
+            font-weight: bold;
+        }
+    
+        &:before {
+            content: counter(section);
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            height: 1.5em;
+            width: 1.5em;
+            background-color: #36422c;
+            color: #ffffff;
+            font-size: 1em;
+            line-height: 1;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+    }
+    p:nth-child(odd) {
+        border-right: 3px solid;
+        padding-left: 0;
+    
+        &:before {
+            left: 100%; 
+            margin-left: -0.7em;
+        }
+    }
+
+    p:nth-child(even) {
+        border-left: 3px solid;
+        padding-right: 0;
+    
+        &:before {
+            right: 100%; 
+            margin-right: -0.7em;
+        }
+    }
+   
+    p:first-child {
+        border-top: 0;
+        border-top-right-radius:0;
+        border-top-left-radius:0;
+    }
+
+    p:last-child {
+        border-bottom-right-radius:0;
+        border-bottom-left-radius:0;
+    }
+</style>

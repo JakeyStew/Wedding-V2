@@ -1,0 +1,311 @@
+---
+import { Image } from 'astro:assets';
+import HeaderImg from './../assets/images/header.jpg';
+import BgImg from './../assets/images/bgs/bg_turf.webp';
+---
+
+<header class="container">
+  <div class="title">
+    <div class="overlay"></div>
+    <Image src={HeaderImg} alt="Owains Wedding Day 2025" loading="eager" />
+    <div class="title-content">
+      <h1>
+        <span id="top">Jake &</span>
+        <span id="bottom">Teags</span>
+      </h1>
+      <hr></hr>
+      <p>We're having a wedding!</p>
+    </div>
+  </div>
+  <div class="content">
+    <Image class='top' src={BgImg} alt='BG Image' />
+    <h2>Newport, UK</h2>
+    <p>Saturday 23rd May, <span>2026</span></p>
+    <div class="timebox">
+      <div class="time">
+        <h2 id="days">00</h2>
+        <p>Days</p>
+      </div>
+      <div class="time">
+        <h2 id="hours">00</h2>
+        <p>Hours</p>
+      </div>
+      <div class="time">
+        <h2 id="minutes">00</h2>
+        <p>Minutes</p>
+      </div>
+    </div>
+    <a href="https://maps.app.goo.gl/ZwJgZSU3rN3grwJE6" title="Newport Market directions" target="_blank">Get there</a>
+    <Image class='bottom' src={BgImg} alt='BG Image' />
+  </div>
+</header>
+
+<style>
+  @keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-10px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
+
+ .container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  background-color: #354a2f;
+  box-sizing: border-box;
+}
+
+.title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.235);
+  z-index: 1;
+}
+
+.title img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.title-content {
+  color: white;
+  position: absolute;
+  bottom: 5%;
+  left: 10%;
+  font-size: 3rem;
+  z-index: 2;
+}
+
+hr {
+  color: #ffffff;
+  margin: 0.235em 0;
+}
+
+.title-content span {
+  font-size: 2em;
+}
+
+#top {
+  margin-left: 10px;
+}
+
+p {
+  font-size: 0.6em;
+}
+
+.title h1 span {
+  display: block;
+  line-height: 1.25em;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 20px;
+  z-index: 2;
+  outline: solid 2px #ffffff;
+  outline-offset: -20px;
+  position: relative;
+
+  .top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(180deg);
+    max-height: 20%;
+    z-index: -1;
+  }
+
+  .bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    max-height: 25%;
+    z-index: -1;
+  }
+
+  span {
+    font-style: italic;
+    font-weight: bold;
+  }
+}
+
+.content h2, .content p {
+  color: #ffffff;
+  font-size: 1em;
+  margin: .4em 0;
+}
+
+.content a {
+  outline: solid 2px #ffffff;
+  color: #ffffff;
+  text-decoration: none;
+  margin-top: 2em;
+  padding: 1em 2em;
+  transition: color 0.3s, text-decoration 0.3s;
+  	transform: translatey(0px);
+	animation: float 4s ease-in-out infinite;
+}
+
+.content a:hover {
+  color: #3D4127;
+  background-color: #ffffff;
+  text-decoration: underline;
+}
+
+.timebox {
+  display: flex;
+  gap: 40px;
+  color: #ffffff;
+  justify-content: center;
+}
+
+.time {
+  font-size: 1em;
+  font-weight: 100;
+}
+
+@media (max-width: 1200px) {
+  .content {
+    .top {
+      max-height: 15%;
+    }
+    .bottom {
+      max-height: 15%;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .title {
+    height: 50%;
+  }
+
+  .content {
+    padding: 60px;
+    height: 50%;
+
+    .top {
+      display: none;
+    }
+
+    .bottom {
+      max-height: 45%;
+    }
+  }
+
+  .content a {
+    padding: 1em 1em;
+    background-color: #ffffff;
+    color: #354a2f;
+    outline: solid 2px #354a2f;
+    outline-offset: -5px;
+  }
+
+  .timebox {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    .bottom {
+      max-height: 30%;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .title-content {
+    bottom: 5%;
+    left: 10%;
+    font-size: 2rem;
+  }
+
+  .content {
+    .bottom {
+      max-height: 20%;
+    }
+  }
+
+  .content a {
+    margin-top: 1em;
+    padding: 0.5em;
+  }
+}
+</style>
+
+<script>
+  const Days = document.getElementById('days');
+  const Hours = document.getElementById('hours');
+  const Minutes = document.getElementById('minutes');
+
+  const targetDate = new Date('May 23 2026 00:00:00').getTime();
+
+  function timer() {
+    const currentDate = new Date().getTime();
+    const distance = targetDate - currentDate;
+
+    const days = Math.floor(distance / 1000 / 60 / 60 / 24);
+    const hours = Math.floor(distance / 1000 / 60 / 60) % 24;
+    const minutes = Math.floor(distance / 1000 / 60) % 60;
+
+    if (Days) {
+      Days.innerHTML = days.toString();
+    }
+    if (Hours) {
+      Hours.innerHTML = hours.toString();
+    }
+    if (Minutes) {
+      Minutes.innerHTML = minutes.toString();
+    }
+
+    if (distance < 0) {
+      if (Days) {
+        Days.innerHTML = '00';
+      }
+      if (Hours) {
+        Hours.innerHTML = '00';
+      }
+      if (Minutes) {
+        Minutes.innerHTML = '00';
+      }
+    }
+  }
+
+  setInterval(timer, 1000);
+</script>

@@ -1,0 +1,28 @@
+body {
+  font-family: 'Cormorant Garamond', sans-serif;
+  font-weight: 400;
+  font-size: 1.6em;
+  color: #000000;
+  background-color: #f5f5d5;
+  line-height: 1.5em;
+}
+
+h1 {
+  font-family: 'Ms Madi', cursive, sans-serif;
+  font-style: italic;
+  font-size: 1em;
+}
+
+h2, h3, h4, h5 {
+  font-family: 'Cormorant Garamond', sans-serif;
+  font-weight: 600;
+  line-height: 1.5em;
+}
+
+a {
+  color: #cecece;
+}
+
+a:is(:hover, :focus) {
+  color: #000000;
+}

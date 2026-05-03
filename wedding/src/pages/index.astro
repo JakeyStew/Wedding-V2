@@ -1,0 +1,64 @@
+---
+import SiteCode from "../components/SiteCode.astro";
+import SiteGifts from "../components/SiteGifts.astro";
+import SiteMenu from "../components/SiteMenu.astro";
+import SitePlanner from "../components/SitePlanner.astro";
+import Layout from "../layouts/BaseLayout.astro";
+---
+
+<Layout title="The Stew-Blew Wedding">
+  <div class="container">
+    <section>
+      <h2 class="intro__heading">#Blew-Stew</h2>
+      <p class="intro__content">We are so excited to have you join our wedding day in the Newport Market. You will find all the informaiton you need about the day on this website. 
+        As well as information on travel and hotel accomadation.</p>
+    </section>
+    <section>
+      <SitePlanner />
+    </section>
+  </div>
+  <div class="colour__inverse">
+    <section class="container">
+      <SiteCode />
+    </section>
+  </div>
+  <div class="container">
+    <section>
+      <SiteGifts />
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .colour__inverse {
+    background-color: #36422c;
+    padding: 1em 1em;
+    margin-bottom: 1em;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+
+    section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0;
+      padding-bottom: 2em;
+      text-align: center;
+
+      .intro__heading {
+        font-size: 3rem;
+        font-style: italic;
+        font-weight: bold;
+        margin: 0;
+        padding-top: 1em;
+      }
+
+      .intro__content {
+        padding-top: 0.5em;
+      }
+    }
+  }
+</style>
