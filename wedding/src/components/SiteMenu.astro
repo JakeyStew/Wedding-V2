@@ -1,13 +1,200 @@
 ---
+import Image from "astro/components/Image.astro";
+import BgImg from './../assets/images/bgs/bg_turf.webp';
 
 ---
 
-<div>
-    <p>
-        
-    </p>
+<div id="menu">
+    <div class="container">
+        <div class="content__container">
+            <h2>What's on the menu?</h2>
+            <div class="grid-container">
+                <div class="grid-item item-1">
+                    <a href="https://newport-market.co.uk/food/the-pizza-boyz/" target="_blank" title="The Pizza Boys web page (Opens in new window)"><h3>The Pizza Boys</h3></a>
+                    <hr>
+                    <ul>
+                        <li>
+                            <p>Burger 1</p>
+                            <p>Burger 2</p>
+                            <p>Burger 3</p>
+                            <p>Burger 4</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="grid-item item-2">
+                    <a href="https://newport-market.co.uk/food/meat-and-greek/" target="_blank" title="Meat and Greek web page (Opens in new window)"><h3>Meat and Greek</h3></a>
+                    <hr>
+                    <ul>
+                        <li>
+                            <p>Burger 1</p>
+                            <p>Burger 1</p>
+                            <p>Burger 1</p>
+                            <p>Burger 1</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="grid-item item-3">
+                    <a href="https://newport-market.co.uk/food/burger-boyz/" target="_blank" title="Burger Boyz web page (Opens in new window)"><h3>Burger Boyz</h3></a>
+                    <hr>
+                    <ul>
+                        <li>
+                            <p>Burger 1</p>
+                            <p>Burger 1</p>
+                            <p>Burger 1</p>
+                            <p>Burger 1</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="grid-item item-4">
+                    <a href="https://newport-market.co.uk/food/seven-lucky-gods/" target="_blank" title="Seven Lucky Gods web page (Opens in new window)"><h3>Seven Lucky Gods</h3></a>
+                    <hr>
+                    <ul>
+                        <li>
+                            <p>Vegan options will be provided to those that have dietary requirements via Seven Lucky Gods</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <span>*Bar will be open from 5:00 PM until 11:00 PM</span>
+        </div>
+        <div>
+            <Image src={BgImg} alt="Food" width="1000" height="200" />
+        </div>
+    </div>
 </div>
 
-<styles>
+<style>
+    h2 {
+        font-size: 1.5em;
+        font-style: italic;
+        line-height: 1.6rem;
+        margin-bottom: 1em;
+    }
 
-</styles>
+    a {
+        text-decoration: none;
+        
+        h3 {
+            color: #000000;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    hr {
+        margin: 0.5em 0;
+        border-top: solid 1px #000000;
+        width: 2em;
+    }
+
+    p {
+        color: #000000;
+        font-weight: 300;
+    }
+
+    .container {
+        background-color: #ffffff;
+        outline: solid 2px #5c724a;
+        outline-offset: -10px;
+        box-shadow: 8.0px 16.0px 16.0px hsl(0deg 0% 0% / 0.25);
+
+        .content__container {
+            padding: 2em 1em 0 1em;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 16px 16px;
+            margin-bottom: 0.5em;
+        }
+        .grid-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+        .item-1 {
+            border-right: dotted 1px #595959;
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+        .item-2 {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+        }
+        .item-3 {
+            border-left: dotted 1px #595959;
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
+        }
+        .item-4 {
+            grid-column: 1 / 4;
+            grid-row: 2 / 3;
+        }
+        /* Tablet styles */
+        @media (max-width: 1024px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, minmax(60px, auto));
+                gap: 24px 24px;
+                margin-bottom: 1em;
+            }
+            .item-1 {
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+            }
+            .item-2 {
+                grid-column: 2 / 3;
+                grid-row: 1 / 2;
+            }
+            .item-3 {
+                border-right: dotted 1px #595959;
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+            }
+            .item-4 {
+                grid-column: 2 / 3;
+                grid-row: 2 / 3;
+            }
+        }
+        /* Mobile styles */
+        @media (max-width: 640px) {
+
+            img {
+                height: 75%;
+            }
+            .grid-container {
+                grid-template-columns: repeat(1, 1fr);
+                grid-template-rows: repeat(4, minmax(60px, auto));
+                gap: 16px 16px;
+            }
+            .item-1 {
+                border: none;
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+            }
+            .item-2 {
+                border: none;
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+            }
+            .item-3 {
+                border: none;
+                grid-column: 1 / 2;
+                grid-row: 3 / 4;
+            }
+            .item-4 {
+                border: none;
+                grid-column: 1 / 2;
+                grid-row: 4 / 5;
+            }
+        }
+    }
+</style>

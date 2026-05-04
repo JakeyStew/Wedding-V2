@@ -1,17 +1,18 @@
 ---
 import SiteCode from "../components/SiteCode.astro";
+import SiteFAQs from "../components/SiteFAQs.astro";
 import SiteGifts from "../components/SiteGifts.astro";
 import SiteMenu from "../components/SiteMenu.astro";
 import SitePlanner from "../components/SitePlanner.astro";
 import Layout from "../layouts/BaseLayout.astro";
 ---
 
-<Layout title="The Stew-Blew Wedding">
+<Layout title="The Blew-Stew Wedding">
   <div class="container">
     <section>
       <h2 class="intro__heading">#Blew-Stew</h2>
-      <p class="intro__content">We are so excited to have you join our wedding day in the Newport Market. You will find all the informaiton you need about the day on this website. 
-        As well as information on travel and hotel accomadation.</p>
+      <p class="intro__content">We are so excited to have you join our wedding day in the Newport Market. You will find all the information you need about the day on this website. 
+        As well as information on travel and hotel accommodation.</p>
     </section>
     <section>
       <SitePlanner />
@@ -24,7 +25,10 @@ import Layout from "../layouts/BaseLayout.astro";
   </div>
   <div class="container">
     <section>
-      <SiteGifts />
+      <SiteMenu />
+    </section>
+    <section>
+      <SiteFAQs />
     </section>
   </div>
 </Layout>
@@ -32,8 +36,8 @@ import Layout from "../layouts/BaseLayout.astro";
 <style>
   .colour__inverse {
     background-color: #36422c;
-    padding: 1em 1em;
-    margin-bottom: 1em;
+    padding: 2em 0;
+    margin-bottom: 2em;
   }
 
   .container {
