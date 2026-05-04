@@ -1,5 +1,6 @@
 ---
-
+import Image from 'astro/components/Image.astro';
+import LayoutImg from '../assets/images/bgs/layout.webp';
 ---
 
 <div>
@@ -11,7 +12,20 @@
             <h3 class="collapsible-summary-title">Are you accepting gifts?</h3>
             </div>
         </summary>
-        <div class="collapsible-content"><p>We're not expecting any gifts. Your presence truly means the most to us. However, if you're feeling generous then a contribution to our honeymoon fund will be greatly appreciated.</p></div>
+        <div class="collapsible-content">
+            <p>
+                Your presence truly means the most to us. However, 
+                if you're feeling generous then a contribution to our honeymoon fund will be greatly appreciated.
+            </p>
+        </div>
+    </details>
+    <details>
+        <summary>        
+            <div>
+            <h3 class="collapsible-summary-title">Will the wedding be indoors or outside?</h3>
+            </div>
+        </summary>
+        <div class="collapsible-content"><p>The entirety of the evening will be indoors.</p></div>
     </details>
     <details>
         <summary>        
@@ -19,15 +33,36 @@
             <h3 class="collapsible-summary-title">How do I get in?</h3>
             </div>
         </summary>
-        <div class="collapsible-content"><p>We're not expecting any gifts. Your presence truly means the most to us. However, if you're feeling generous then a contribution to our honeymoon fund will be greatly appreciated.</p></div>
+        <div class="collapsible-content">
+            <p>
+                You can enter the premises via the East (High Street) & West (Upper Dock Street) entrances. 
+                The West entrance will be locked after 21:00, please use the West stairwell/lift to reach the second floor as marked on the venue map.
+            </p>
+            <div class="img__container">
+                <Image src={LayoutImg} alt="Venue Map" loading='lazy' />
+            </div>
+        </div>
     </details>
     <details>
         <summary>        
             <div>
-            <h3 class="collapsible-summary-title">I've been given conflicting timescales. What time do I need to arrive?</h3>
+            <h3 class="collapsible-summary-title">What payment options are available?</h3>
             </div>
         </summary>
-        <div class="collapsible-content"><p>We're not expecting any gifts. Your presence truly means the most to us. However, if you're feeling generous then a contribution to our honeymoon fund will be greatly appreciated.</p></div>
+        <div class="collapsible-content">
+            <p>
+                The market is completely cashless. Please ensure you have alternative payment methods available. 
+                This could be via Debit/Credit Card or contactless payments via mobile device.
+            </p>
+        </div>
+    </details>
+    <details>
+        <summary>        
+            <div>
+            <h3 class="collapsible-summary-title">I have additional needs, what should I do?</h3>
+            </div>
+        </summary>
+        <div class="collapsible-content"><p>The market is fully accessible with a lift to the second floor along with all necessary facilities on the same floor.</p></div>
     </details>
     <details>
         <summary>        
@@ -35,7 +70,27 @@
             <h3 class="collapsible-summary-title">My dietary requirements have changed. Can I amend my info?</h3>
             </div>
         </summary>
-        <div class="collapsible-content"><p>We're not expecting any gifts. Your presence truly means the most to us. However, if you're feeling generous then a contribution to our honeymoon fund will be greatly appreciated.</p></div>
+        <div class="collapsible-content">
+            <p>
+                Unfortunately at this point everything is booked in and no amendments can be made.
+            </p>
+        </div>
+    </details>
+    <details>
+        <summary>        
+            <div>
+            <h3 class="collapsible-summary-title">Can I bring a plus-one or a child?</h3>
+            </div>
+        </summary>
+        <div class="collapsible-content"><p>We are sorry, but plus-ones and children are not permitted.</p></div>
+    </details>
+    <details>
+        <summary>        
+            <div>
+            <h3 class="collapsible-summary-title">I've been given conflicting timescales. What time do I need to arrive?</h3>
+            </div>
+        </summary>
+        <div class="collapsible-content"><p>We are hosting a small gathering due to start at 14:00, those attending will be notified.</p></div>
     </details>
 </div>
 
@@ -62,6 +117,17 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+    }
+
+    .img__container {
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+
+        img {
+            width: 50%;
+            height: auto;
+        }
     }
 
     h3.collapsible-summary-title {

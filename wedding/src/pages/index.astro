@@ -14,6 +14,9 @@ import Layout from "../layouts/BaseLayout.astro";
         As well as information on travel and hotel accommodation.</p>
     </section>
     <section>
+      <span class="danger">*Newport Market is a cashless venue*</span>
+    </section>
+    <section>
       <SitePlanner />
     </section>
   </div>
@@ -62,6 +65,12 @@ import Layout from "../layouts/BaseLayout.astro";
       .intro__content {
         padding-top: 0.5em;
       }
+    }
+
+    .danger {
+      font-weight: bolder;
+      font-size: 2rem;
+      text-decoration: underline;
     }
   }
 </style>
